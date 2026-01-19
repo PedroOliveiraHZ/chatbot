@@ -1,0 +1,221 @@
+/* ================= BASE ================= */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+/* Centralização total da página */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CARD PRINCIPAL ================= */
+body > div {
+  position: relative; /* 🔥 necessário para ::before e ::after */
+  background: #666666ab;
+  width: 100%;
+  max-width: 460px;
+  padding: 2.4rem 2.6rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  text-align: left;
+  overflow: hidden;
+}
+
+/* 🔶 LOGO FORTLOG TRANSPARENTE (MARCA D’ÁGUA) */
+body > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* 🔶 CAMINHÃO NO CANTO DO CARD */
+body > div::after {
+  content: "";
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
+  background-image: url("/caminhao.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ================= TEXTO ================= */
+body > div h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+body > div p {
+  font-size: 0.95rem;
+  color: #b6c907;
+  margin-bottom: 1.6rem;
+}
+
+/* ================= UPLOAD ================= */
+.upload-box {
+  width: 100%;
+  border: 2px dashed #d1d5db;
+  border-radius: 14px;
+  padding: 2.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.upload-box:hover {
+  border-color: #ffba0a;
+  background: #f9fafb;
+}
+
+.upload-box span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffba0a;
+}
+
+.upload-box small {
+  font-size: 0.75rem;
+  color: #ffba0a;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+/* ================= AÇÕES ================= */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.actions button {
+  flex: 1;
+}
+
+/* Cancelar */
+.btn-cancel {
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: none;
+  background: #e5e7eb;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #d1d5db;
+}
+
+/* Enviar */
+.btn-primary {
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: none;
+  background: #ffba0a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.btn-primary:hover {
+  background: #e0e24b;
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+}
+
+/* Botão desabilitado */
+button:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ================= MENSAGEM FLUTUANTE ================= */
+#message-card {
+  position: fixed;
+  left: 50%;
+  bottom: calc(50% + 140px);
+  transform: translateX(-50%);
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+  z-index: 9999;
+}
+
+.card-body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  background: #f1f1f1;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  animation: slideUp 0.4s ease;
+  white-space: nowrap;
+}
+
+/* Animação mensagem */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CAMINHÃO DO BOTÃO ================= */
+.truck {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+/* animação só quando estiver enviando */
+.btn-primary.loading .truck {
+  animation: drive 1s infinite ease-in-out;
+}
+
+@keyframes drive {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
