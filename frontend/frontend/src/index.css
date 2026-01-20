@@ -1,10 +1,4 @@
 /* ================= BASE ================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
@@ -24,21 +18,14 @@ body {
 
 /* ================= CARD PRINCIPAL ================= */
 body > div {
-  position: relative; /* necessário para ::before e ::after */
+  position: relative; /* 🔥 necessário para ::before e ::after */
   background: #666666ab;
   width: 100%;
   max-width: 460px;
-  padding: 2.5rem;
-
+  padding: 2.4rem 2.6rem;
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-
-  /* 🔥 CENTRALIZAÇÃO CORRETA */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
+  text-align: left;
   overflow: hidden;
 }
 
@@ -47,11 +34,11 @@ body > div::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/logo.png");
+  background-image: url("/logo.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  opacity: 0.20;
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -121,9 +108,7 @@ body > div p {
 
 /* ================= AÇÕES ================= */
 .actions {
-  width: 100%;
   display: flex;
-  justify-content: center;
   gap: 1rem;
   margin-top: 1.6rem;
 }
@@ -233,10 +218,4 @@ button:disabled {
   100% {
     transform: translateX(0);
   }
-}
-
-/* ================= DRAG ACTIVE ================= */
-.upload-box.drag-active {
-  border-color: #ffba0a;
-  background: rgba(255, 186, 10, 0.08);
 }
