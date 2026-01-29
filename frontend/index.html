@@ -7,11 +7,11 @@
     <title>frontend</title>
 
     <style>
-      /* ================= MENSAGEM FLUTUANTE ================= */
+    
       #message-card {
         position: fixed;
         left: 50%;
-        bottom: calc(50% + 140px); /* acima do modal */
+        bottom: calc(50% + 140px); 
         transform: translateX(-50%);
         width: 360px;
         background: #ffffff;
@@ -26,7 +26,7 @@
         padding: 10px;
       }
 
-      /* LOGO AO LADO DA MENSAGEM */
+    
       .message-logo {
         width: 42px;
         height: 42px;
@@ -83,7 +83,7 @@
         }
       }
 
-      /* ================= CARD CINZA ================= */
+     
       .upload-card {
         position: relative;
         background: #9e9e9e;
@@ -96,7 +96,7 @@
         margin: auto;
       }
 
-      /* LOGO NO FUNDO DO CARD CINZA */
+     
       .upload-card::before {
         content: "";
         position: absolute;
@@ -112,10 +112,10 @@
   </head>
 
   <body>
-    <!-- React -->
+   
     <div id="root"></div>
 
-    <!-- CARD DAS MENSAGENS -->
+    
     <div id="message-card">
       <div class="message-logo"></div>
 
@@ -125,10 +125,10 @@
       </div>
     </div>
 
-    <!-- Entrada do Vite -->
+    
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- SCRIPT DAS MENSAGENS -->
+    
     <script>
       const mensagens = [
         "🚚 Gestão em tempo real",

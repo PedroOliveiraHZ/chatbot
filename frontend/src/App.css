@@ -47,13 +47,13 @@ body {
 .container p {
   font-size: 0.95rem;
   color: #6b7280;
-  margin-bottom: 0.2rem; 
+  margin-bottom: 0.2rem;
 }
 
-/* ================= UPLOAD ================= */
+
 .upload-box {
   width: 95%;
-  margin-top: 0.2rem;    
+  margin-top: 0.2rem;
 
   border: 2px dashed #cbd5e1;
   border-radius: 18px;
@@ -88,12 +88,12 @@ body {
   color: #9ca3af;
 }
 
-/* Esconde input */
+
 .upload-box input[type="file"] {
   display: none;
 }
 
-/* ================= BOTÕES ================= */
+
 .actions {
   display: flex;
   gap: 1.2rem;
@@ -109,7 +109,7 @@ body {
   cursor: pointer;
 }
 
-/* Cancelar */
+
 .btn-cancel {
   background: #e5e7eb;
   color: #111827;
@@ -119,7 +119,7 @@ body {
   background: #d1d5db;
 }
 
-/* Enviar */
+
 .btn-primary {
   background: #f97316;
   color: #ffffff;
@@ -130,7 +130,7 @@ body {
   background: #ea580c;
 }
 
-/* Disabled */
+
 button:disabled {
   background: #e5e7eb;
   color: #9ca3af;

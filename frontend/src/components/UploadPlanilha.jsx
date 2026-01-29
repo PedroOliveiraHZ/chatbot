@@ -53,7 +53,7 @@ export default function UploadPlanilha() {
 
   return (
     <>
-      {/* Área de upload com drag & drop */}
+
       <label
         className={`upload-box ${dragActive ? "drag-active" : ""}`}
         onDragEnter={() => setDragActive(true)}
@@ -73,8 +73,8 @@ export default function UploadPlanilha() {
           {dragActive
             ? "Solte o arquivo aqui"
             : file
-            ? file.name
-            : "Clique ou arraste a planilha aqui"}
+              ? file.name
+              : "Clique ou arraste a planilha aqui"}
         </span>
 
         <small>
@@ -84,7 +84,7 @@ export default function UploadPlanilha() {
         </small>
       </label>
 
-      {/* Botões */}
+
       <div className="actions">
         <button
           className="btn-cancel"

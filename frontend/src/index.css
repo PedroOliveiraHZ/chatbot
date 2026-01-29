@@ -23,8 +23,9 @@ body {
 }
 
 /* ================= CARD PRINCIPAL ================= */
-body > div {
-  position: relative; /* necessário para ::before e ::after */
+body>div {
+  position: relative;
+  /* necessário para ::before e ::after */
   background: #666666ab;
   width: 100%;
   max-width: 460px;
@@ -43,7 +44,7 @@ body > div {
 }
 
 /* 🔶 LOGO FORTLOG TRANSPARENTE (MARCA D’ÁGUA) */
-body > div::before {
+body>div::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -56,7 +57,7 @@ body > div::before {
 }
 
 /* 🔶 CAMINHÃO NO CANTO DO CARD */
-body > div::after {
+body>div::after {
   content: "";
   position: absolute;
   bottom: 16px;
@@ -71,13 +72,13 @@ body > div::after {
 }
 
 /* ================= TEXTO ================= */
-body > div h1 {
+body>div h1 {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
 }
 
-body > div p {
+body>div p {
   font-size: 0.95rem;
   color: #b6c907;
   margin-bottom: 1.6rem;
@@ -206,19 +207,20 @@ button:disabled {
     opacity: 0;
     transform: translateY(25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ================= CAMINHÃO DO BOTÃO ================= */
+
 .truck {
   display: inline-block;
   margin-left: 6px;
 }
 
-/* animação só quando estiver enviando */
+
 .btn-primary.loading .truck {
   animation: drive 1s infinite ease-in-out;
 }
@@ -227,15 +229,17 @@ button:disabled {
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(8px);
   }
+
   100% {
     transform: translateX(0);
   }
 }
 
-/* ================= DRAG ACTIVE ================= */
+
 .upload-box.drag-active {
   border-color: #ffba0a;
   background: rgba(255, 186, 10, 0.08);
